@@ -1,33 +1,31 @@
 import express from "express";
+import usersOnlycontrollers from "../controllers/usersOnlycontrollers.js";
 const userOnlyRouter = express.Router();
-import { isAuthorized } from "../middlewares/authorize.middleware.js";
-import userOnlyController from "../controllers/usersOnlycontrollers.js";
-
-// Check this
-userOnlyRouter.get("/users/:id/posts", userOnlyController.findUserPostsById);
+// User Only
+userOnlyRouter.get("/:id/posts", usersOnlycontrollers.findUserPostsById);
 userOnlyRouter.get(
-  "/users/:userId/posts/:postId",
-  userOnlyController.findOneUserPostById
+  "/:userId/posts/:postId",
+  usersOnlycontrollers.findOneUserPostById
 );
 
 userOnlyRouter.get(
-  "/users/:userId/comments/:commentId/posts/:postId",
-  userOnlyController.findOneUserComments
+  "/:userId/comments/:commentId/posts/:postId",
+  usersOnlycontrollers.findOneUserComments
 );
 
 userOnlyRouter.get(
-  "/users/:userId/posts/:postId/comments",
-  userOnlyController.findUserCommentById
+  "/:userId/posts/:postId/comments",
+  usersOnlycontrollers.findUserCommentById
 );
 
 userOnlyRouter.get(
-  "/users/@:userName",
-  userOnlyController.findUserByUserByUsername
+  "/@:userName",
+  usersOnlycontrollers.findUserByUserByUsername
 );
 
 userOnlyRouter.get(
-  "/users/posts/@:userName",
-  userOnlyController.findPostsByUserByUsername
+  "/posts/@:userName",
+  usersOnlycontrollers.findPostsByUserByUsername
 );
 
 export default userOnlyRouter;
