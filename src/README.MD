@@ -152,21 +152,8 @@ export default (app) => {
 
 > Test out your endpoints by making the necessary request to their responsive endpoints
 
-### API Documentation URL
+links
 
-```
-https://post-it-isao.onrender.com/api/v1/docs
-```
+### Database design Link
 
-### API URL
-
-```
-https://post-it-isao.onrender.com
-```
-
-### Database Model Design
-
-```
- https://dbdesigner.page.link/DhZwenJBsm23wqTK6
-
-```
+### Hosted API URL

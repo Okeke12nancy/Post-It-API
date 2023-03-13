@@ -8,6 +8,7 @@ export class UserOnlyController {
   async findUserPostsById(req, res) {
     logger.debug("Finding all posts by one user");
     try {
+      const { limit, page } = req.query;
       const userId = req.params.id;
       const user = await userService.findById(userId);
       if (!user) {
@@ -15,7 +16,10 @@ export class UserOnlyController {
       }
 
       // use the populate method to get all posts by the user
-      const posts = await postService.findAll({ createdBy: userId });
+      const posts = await postService.findAll(
+        { createdBy: userId },
+        { limit, page }
+      );
       return handleResponse(200, "user posts found", { posts }, res);
     } catch (e) {
       logger.error(e);

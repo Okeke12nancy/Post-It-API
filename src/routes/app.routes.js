@@ -10,7 +10,7 @@ const basePath = "/api/v1";
 export default (app) => {
   app.use(`${basePath}/auth`, authRouter);
   app.use(`${basePath}/users`, userRouter);
-  app.use(`${basePath}`, userOnlyRouter);
+  app.use(`${basePath}/user`, userOnlyRouter);
   app.use(`${basePath}/posts`, postRouter);
   app.use(`${basePath}/comments`, commentRouter);
   app.use(`${basePath}/docs`, docRouter);
