@@ -2,7 +2,8 @@
   "name": "post-it-api",
   "version": "1.0.0",
   "description": "A post-It APP where users can post and comment",
-  "main": "server.js",
+  "main": "./src/server.js",
+  "type": "module",
   "scripts": {
    "dev": "nodemon './src/server.js'",
    "start": "node './src/server.js'"
