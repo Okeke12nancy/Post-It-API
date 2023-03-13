@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import paginate from "mongoose-paginate-v2";
-import aggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const commentSchema = new mongoose.Schema(
   {
@@ -31,6 +29,10 @@ const commentSchema = new mongoose.Schema(
     deleted: {
       type: Boolean,
       default: false,
+    },
+    
+    deletedAt: {
+      type: Date,
     },
   },
   { timestamps: true }
