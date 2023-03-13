@@ -2,9 +2,11 @@
   "name": "post-it-api",
   "version": "1.0.0",
   "description": "A post-It APP where users can post and comment",
-  "main": "server.js",
+  "main": "./src/server.js",
+  "type": "module",
   "scripts": {
-   "dev": "nodemon './src/server.js" 
+   "dev": "nodemon './src/server.js'",
+   "start": "node './src/server.js'"
   },
   "author": "",
   "license": "ISC",
@@ -23,5 +25,8 @@
     "nodemailer": "^6.9.1",
     "validatorjs": "^3.22.1",
     "winston": "^3.8.2"
+  },
+  "engines": {
+    "node": "14.20.1"
   }
 }
