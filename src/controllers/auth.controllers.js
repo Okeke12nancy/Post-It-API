@@ -73,7 +73,7 @@ class AuthController {
       const passwordMatch = await verifyHash(user.password, password);
 
       if (!passwordMatch) {
-        return handleResponse(400, "invalid email or password");
+        return handleResponse(400, "invalid email or password", {}, res);
       }
 
       if (!user.verified) {
